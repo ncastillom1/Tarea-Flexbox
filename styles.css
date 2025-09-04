@@ -1,0 +1,210 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 30px;
+    min-height: 100vh;
+}
+
+.contenedor-principal {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    font-size: 2.2rem;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #3498db;
+}
+
+.fila {
+    display: flex;
+    margin-bottom: 30px;
+    gap: 15px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+}
+
+.caja {
+    background: linear-gradient(145deg, #3498db, #2980b9);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 8px;
+    height: 80px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.caja:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Primera fila: 4 cajas iguales */
+.fila-1 .caja {
+    flex: 1;
+}
+
+/* Segunda fila: 3 cajas, la central más ancha */
+.fila-2 .caja {
+    flex: 1;
+}
+
+.fila-2 .caja-ancha {
+    flex: 2;
+    background: linear-gradient(145deg, #2ecc71, #27ae60);
+}
+
+/* Tercera fila: 3 cajas, la central más angosta */
+.fila-3 .caja {
+    flex: 2;
+}
+
+.fila-3 .caja-angosta {
+    flex: 1;
+    background: linear-gradient(145deg, #e74c3c, #c0392b);
+}
+
+/* Cuarta fila: 5 cajas pequeñas en orden distinto */
+.fila-4 {
+    justify-content: space-between;
+}
+
+.fila-4 .caja {
+    width: 70px;
+    flex: none;
+}
+
+.fila-4 .caja:nth-child(1) {
+    background: linear-gradient(145deg, #9b59b6, #8e44ad);
+}
+.fila-4 .caja:nth-child(2) {
+    background: linear-gradient(145deg, #34495e, #2c3e50);
+}
+.fila-4 .caja:nth-child(3) {
+    background: linear-gradient(145deg, #e67e22, #d35400);
+}
+.fila-4 .caja:nth-child(4) {
+    background: linear-gradient(145deg, #1abc9c, #16a085);
+}
+.fila-4 .caja:nth-child(5) {
+    background: linear-gradient(145deg, #f1c40f, #f39c12);
+}
+
+/* Quinta fila: contenedor alto con cajas en distintas posiciones */
+.fila-5 {
+    display: flex;
+    height: 300px;
+    gap: 20px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+}
+
+.contenedor-vertical {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100px;
+}
+
+.contenedor-principal {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+}
+
+.seccion-superior, .seccion-inferior {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.seccion-central {
+    display: flex;
+    justify-content: center;
+}
+
+.fila-5 .caja {
+    height: auto;
+    padding: 20px 0;
+    width: 80px;
+}
+
+.contenedor-vertical .caja {
+    writing-mode: vertical-lr;
+    text-orientation: mixed;
+    flex: 1;
+}
+
+.contenedor-vertical .caja:nth-child(1) {
+    background: linear-gradient(145deg, #9b59b6, #8e44ad);
+}
+
+.contenedor-vertical .caja:nth-child(2) {
+    background: linear-gradient(145deg, #34495e, #2c3e50);
+}
+
+.seccion-superior .caja {
+    background: linear-gradient(145deg, #e67e22, #d35400);
+}
+
+.seccion-central .caja {
+    background: linear-gradient(145deg, #1abc9c, #16a085);
+}
+
+.seccion-inferior .caja {
+    background: linear-gradient(145deg, #f1c40f, #f39c12);
+}
+
+/* Responsive básico */
+@media (max-width: 768px) {
+    .contenedor-principal {
+        padding: 15px;
+    }
+    
+    .fila {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .fila-4 {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .fila-5 {
+        flex-direction: column;
+        height: auto;
+    }
+    
+    .contenedor-vertical {
+        width: 100%;
+        flex-direction: row;
+        margin-bottom: 15px;
+    }
+    
+    .contenedor-vertical .caja {
+        writing-mode: horizontal-tb;
+        flex: 1;
+        margin: 0 5px;
+    }
+}
